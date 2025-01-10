@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Image Bleed Generator</title>
+  </head>
+  <body>
+    <h1>Image Bleed Generator</h1>
+    <form
+      action="/"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <label for="image">Upload Image:</label>
+      <input
+        type="file"
+        name="image"
+        id="image"
+        required
+      /><br /><br />
+
+      <label for="bleed_width">Bleed Width:</label>
+      <input
+        type="number"
+        name="bleed_width"
+        id="bleed_width"
+        min="0.1"
+        step="0.1"
+        required
+      />
+
+      <select
+        name="unit"
+        id="unit"
+        required
+      >
+        <option value="pixels">Pixels</option>
+        <option value="inches">Inches</option>
+        <option value="cm">Centimeters</option></select
+      ><br /><br />
+
+      <label for="crop_marks">Enable Crop Marks:</label>
+      <input
+        type="checkbox"
+        name="crop_marks"
+        id="crop_marks"
+        checked
+      /><br /><br />
+      <!-- 
+      <label for="bleed_stretch">Adjust bleed stretch (%):</label>
+      <input
+        type="number"
+        name="bleed_stretch"
+        id="bleed_stretch"
+        value="10"
+      /><br /><br /> -->
+
+      <label for="crop_mark_width">Crop Mark Width (px):</label>
+      <input
+        type="number"
+        name="crop_mark_width"
+        id="crop_mark_width"
+        value="1"
+      /><br /><br />
+      <label for="crop_mark_length">Crop Mark Length (px):</label>
+      <input
+        type="number"
+        name="crop_mark_length"
+        id="crop_mark_length"
+        value="10"
+      /><br /><br />
+
+      <button type="submit">Generate Bleed</button>
+    </form>
+  </body>
+</html>
